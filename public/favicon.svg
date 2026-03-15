@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="face" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ECECEC"/>
+      <stop offset="100%" stop-color="#D4D4D4"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B0B0B0"/>
+      <stop offset="100%" stop-color="#8A8A8A"/>
+    </linearGradient>
+  </defs>
+  <!-- Shadow layer -->
+  <path d="
+    M 16 8
+    Q 8 8, 8 16
+    L 8 50
+    L 27 50
+    C 27 50, 26 44, 31 44
+    C 36 44, 35 50, 35 50
+    L 50 50
+    L 50 31
+    C 50 31, 56 32, 56 26.5
+    C 56 21, 50 22, 50 22
+    L 50 8
+    Z
+  " fill="#9E9E9E" transform="translate(1.5, 1.5)"/>
+  <!-- Main corner puzzle piece -->
+  <path d="
+    M 16 8
+    Q 8 8, 8 16
+    L 8 50
+    L 27 50
+    C 27 50, 26 44, 31 44
+    C 36 44, 35 50, 35 50
+    L 50 50
+    L 50 31
+    C 50 31, 56 32, 56 26.5
+    C 56 21, 50 22, 50 22
+    L 50 8
+    Z
+  " fill="url(#face)" stroke="url(#edge)" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- Serif character glyph -->
+  <text x="29" y="34" font-family="Georgia,'Times New Roman',serif" font-size="20" font-weight="bold" fill="#555555" text-anchor="middle">W</text>
+</svg>

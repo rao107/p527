@@ -489,7 +489,7 @@ export default function Home() {
               <ul className="mt-2 space-y-1 overflow-y-scroll">
                 {parts.map((part) => (
                   <li key={part.id} className="flex items-baseline gap-2 text-sm">
-                    <button onClick={() => navigateTo(part.id)} className={`cursor-pointer hover:text-white/80 ${isFullyExplored(part.id) ? "text-white/40" : "text-white"}`}>{part.label}</button>
+                    <button onClick={() => navigateTo(part.id)} className={`cursor-pointer text-left hover:text-white/80 ${isFullyExplored(part.id) ? "text-white/40" : "text-white"}`}>{part.label}</button>
                   </li>
                 ))}
               </ul>
@@ -507,8 +507,10 @@ export default function Home() {
         className="absolute top-0 right-0 z-10 h-full w-80 bg-black/80 backdrop-blur-md border-l border-white/10 flex flex-col"
       >
         <div className="p-6">
-          <h1 className="text-2xl font-bold text-white">P527 Roguelike</h1>
+          <h1 className="text-2xl font-bold text-white">Fathom</h1>
           <p className="mt-2 text-sm text-white/60">
+            A Wikidata Roguelike 
+            
             Explore the universe through Wikidata&apos;s &quot;has part&quot; (P527) relationships.
           </p>
           <p className="mt-1 text-sm text-white/60">
@@ -516,14 +518,14 @@ export default function Home() {
           </p>
           <div className="mt-6 border-t border-white/10 pt-4">
             <p className="text-xs text-white/40">Depth</p>
-            <p className="mt-1 text-sm text-white">{depth}</p>
+            <p className="mt-1 text-sm text-white">{depth} fathom{depth === 1 ? "" : "s"}</p>
             <p className="mt-3 text-xs text-white/40">Best depth</p>
-            <p className="mt-1 text-sm text-white">{bestDepth}</p>
+            <p className="mt-1 text-sm text-white">{bestDepth} fathom{depth === 1 ? "" : "s"}</p>
           </div>
         </div>
         <div className="mt-auto p-6 border-t border-white/10">
           <p className="text-xs text-white/40">Created by</p>
-          <p className="mt-1 text-sm text-white">Anirudh Rao</p>
+          <a href="https://anirudhra0.com" target="_blank" rel="noopener noreferrer" className="mt-1 text-sm text-white hover:text-blue-600 transition-colors">Anirudh Rao</a>
         </div>
       </div>
     </div>
