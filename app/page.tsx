@@ -120,11 +120,17 @@ export default function Home() {
   const [wikiUrl, setWikiUrl] = useState(`https://www.wikidata.org/wiki/Q1`);
   const [depth, setDepth] = useState(0);
   const [bestDepth, setBestDepth] = useState(0);
+  const [reachedEarth, setReachedEarth] = useState(false);
+  const [earthDepth, setEarthDepth] = useState(0);
 
   const navigateTo = useCallback((newQid: string) => {
     setDepth((prev) => {
       const next = prev + 1;
       setBestDepth((best) => Math.max(best, next));
+      if (newQid === "Q2") {
+        setReachedEarth(true);
+        setEarthDepth((prev) => Math.max(prev, next));
+      }
       return next;
     });
     setQid(newQid);
@@ -512,6 +518,7 @@ export default function Home() {
             A Wikidata roguelike
           </p>
           <p className="mt-1 text-sm text-white/60">
+            Find your way home.
             Click a ball or use the left sidebar to navigate into its parts.
           </p>
           <div className="mt-6 border-t border-white/10 pt-4">
@@ -519,6 +526,9 @@ export default function Home() {
             <p className="mt-1 text-sm text-white">{depth} fathom{depth === 1 ? "" : "s"}</p>
             <p className="mt-3 text-xs text-white/40">Best depth</p>
             <p className="mt-1 text-sm text-white">{bestDepth} fathom{depth === 1 ? "" : "s"}</p>
+            {reachedEarth && (
+              <button onClick={() => { setQid("Q2"); setDepth(earthDepth); }} className="mt-3 text-2xl cursor-pointer" title="Return to Earth">🌍</button>
+            )}
           </div>
         </div>
         <div className="mt-auto p-6 border-t border-white/10">
@@ -526,6 +536,7 @@ export default function Home() {
           <a href="https://anirudhra0.com" target="_blank" rel="noopener noreferrer" className="mt-1 text-sm text-white hover:text-blue-600 transition-colors">Anirudh Rao</a>
         </div>
       </div>
+
     </div>
   );
 }
