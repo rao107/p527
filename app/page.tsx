@@ -508,10 +508,8 @@ export default function Home() {
       >
         <div className="p-6">
           <h1 className="text-2xl font-bold text-white">Fathom</h1>
-          <p className="mt-2 text-sm text-white/60">
-            A Wikidata Roguelike 
-            
-            Explore the universe through Wikidata&apos;s &quot;has part&quot; (P527) relationships.
+          <p className="mt-2 text-sm text-white/60">            
+            A Wikidata roguelike
           </p>
           <p className="mt-1 text-sm text-white/60">
             Click a ball or use the left sidebar to navigate into its parts.
